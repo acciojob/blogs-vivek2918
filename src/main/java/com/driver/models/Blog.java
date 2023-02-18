@@ -21,7 +21,7 @@ public class Blog {
     private String content;
 
     //@UpdateTimestamp
-    private Date putDate;
+    private Date pubDate;
 
     //blog wrt to user is child
     //is mapping with the user and join the column
@@ -35,6 +35,12 @@ public class Blog {
    private List<Image> imageList = new ArrayList<>();
 
     public Blog() {
+    }
+
+    public Blog(User user, String title, String content) {
+        this.title = title;
+        this.content = content;
+        this.user = user;
     }
 
     public int getId() {
@@ -61,12 +67,12 @@ public class Blog {
         this.content = content;
     }
 
-    public Date getPutDate() {
-        return putDate;
+    public Date getPubDate() {
+        return pubDate;
     }
 
-    public void setPutDate(Date putDate) {
-        this.putDate = putDate;
+    public void setPubDate(Date pubDate) {
+        this.pubDate = pubDate;
     }
 
     public User getUser() {
