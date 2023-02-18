@@ -14,9 +14,9 @@ public class UserController {
     //@Autowired
     UserService userService = new UserService();
     @PostMapping("/create")
-    public ResponseEntity<Void> createUser(@RequestBody User user) {
+    public ResponseEntity<String> createUser(@RequestBody User user) {
         userService.createUser(user);
-        return new ResponseEntity<>(HttpStatus.CREATED);
+        return new ResponseEntity<>("create user successfully",HttpStatus.CREATED);
     }
 
     @DeleteMapping("/delete/{userId}")
